@@ -188,7 +188,7 @@ h1, h2, h3, p {
     display: flex;
     gap: 80px;
     width: max-content;
-    animation: scroll 25s linear infinite;
+    animation: scroll 12.5s linear infinite;
     will-change: transform;
 }
 
