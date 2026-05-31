@@ -1,4 +1,4 @@
-/* RESET */
+/* ====================== RESET & GENERAL ====================== */
 * {
     margin: 0;
     padding: 0;
@@ -14,59 +14,49 @@ body {
     font-family: Arial, sans-serif;
     background: #0b0f1a;
     color: white;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
-/* NAVBAR */
+/* ====================== NAVBAR ====================== */
 .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(10, 10, 10, 0.92);
+    background: rgba(10, 10, 10, 0.95);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 6px 25px;
+    padding: 12px 25px;
     z-index: 1000;
-    backdrop-filter: blur(8px);
+    backdrop-filter: blur(10px);
 }
 
 .logo {
     font-weight: bold;
     color: #00d4ff;
     letter-spacing: 2px;
+    font-size: 1.1rem;
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 12px;
+    gap: 18px;
     flex-wrap: wrap;
 }
 
 .nav-links a {
     color: white;
     text-decoration: none;
-    font-size: 13px;
+    font-size: 0.95rem;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
     color: #00d4ff;
 }
 
-.navbar {
-    padding: 10px 15px;
-}
-
-.nav-links {
-    gap: 8px;
-}
-
-.nav-links a {
-    font-size: 12px;
-}
-
-/* HERO */
+/* ====================== HERO ====================== */
 .hero {
     height: 100vh;
     display: flex;
@@ -74,71 +64,60 @@ body {
     align-items: center;
     text-align: center;
     background: radial-gradient(circle, #101828, #05070d);
-    margin-bottom: 0;
 }
 
-.hero h1 {
-    font-size: 4rem;
+.hero-content h1 {
+    font-size: 4.2rem;
+    margin-bottom: 10px;
 }
 
 .hero h2 {
     color: #00d4ff;
     margin-top: 8px;
+    font-size: 1.8rem;
 }
 
 .hero p {
-    margin-top: 8px;
-    opacity: 0.8;
+    margin-top: 12px;
+    opacity: 0.85;
+    font-size: 1.1rem;
 }
 
-.hero p {
-    color:aquamarine
-}
 .logo-wrapper img {
-    width: 170px;
-    margin: 18px 0;
+    width: 180px;
+    margin: 20px 0;
 }
 
-/* BUTTON */
 .btn {
     display: inline-block;
-    margin-top: 18px;
-    padding: 12px 22px;
+    margin-top: 25px;
+    padding: 14px 28px;
     background: #00d4ff;
     color: black;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
+    transition: all 0.3s;
 }
 
-/* SECTIONS */
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+}
+
+/* ====================== SECTIONS ====================== */
 .section {
-    padding: 45px 50px;
-    min-height: auto;
+    padding: 80px 50px;
 }
 
-/* HEADINGS */
 .section h2 {
     color: #00d4ff;
-    margin-bottom: 6px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2.2rem;
 }
 
-.section a {
-    color:aqua
-}
-
-/* PARAGRAPHS */
-.section p {
-    margin-bottom: 6px;
-    line-height: 1.5;
-}
-
-/* GLOBAL RESET FOR CLEAN LOOK */
-h1, h2, h3, p {
-    margin: 0;
-}
-
-
+/* ====================== CARD CONTAINER ====================== */
 .card-container {
     display: flex;
     gap: 30px;
@@ -152,91 +131,110 @@ h1, h2, h3, p {
     border-radius: 12px;
     overflow: hidden;
     text-align: center;
-    transition: 0.3s;
+    transition: all 0.4s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 0 20px #00d4ff;
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 212, 255, 0.15);
 }
 
 .card img {
     width: 100%;
-    height: 325px;
+    height: 240px;
     object-fit: cover;
 }
 
 .card h3 {
-    margin: 15px 0 10px;
+    margin: 18px 0 10px;
     color: #00d4ff;
 }
 
 .card p {
-    padding: 0 15px 20px;
+    padding: 0 18px 22px;
+    font-size: 0.95rem;
 }
 
-
-/* SPONSOR SLIDER */
-
+/* ====================== SPONSOR SLIDER (OPTIMIZE EDİLMİŞ) ====================== */
 .sponsor-slider {
     overflow: hidden;
     width: 100%;
-    margin-top: 30px;
+    margin: 40px 0;
+    padding: 20px 0;
 }
 
 .sponsor-track {
     display: flex;
-    gap: 80px;
+    gap: 70px;
     width: max-content;
-    animation: scroll 12.5s linear infinite;
+    animation: scroll 22s linear infinite;
     will-change: transform;
 }
 
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
 .sponsor-track img {
-    height: 100px;
+    height: 95px;
     width: auto;
-    margin: 0 40px;
-    filter: brightness(0.95);
-    transition: 0.3s;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: brightness(0.9);
+    transition: all 0.3s ease;
 }
 
 .sponsor-track img:hover {
-    transform: scale(1.1);
+    filter: brightness(1.1);
+    transform: scale(1.08);
 }
 
-
-
-@media (max-width: 768px) {
-
-    .sponsor-track img {
-        height: 60px;
-        margin: 0 20px;
-    }
-
+/* Sonsuz döngü için */
+.sponsor-track::after {
+    content: attr(data-clone);
+    display: flex;
+    gap: 70px;
+    margin-left: 70px;
 }
 
+@keyframes scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+}
+
+/* ====================== GALLERY ====================== */
 .gallery {
     columns: 3;
-    column-gap: 15px;
+    column-gap: 18px;
 }
 
 .gallery img {
-    width: 75%;
-    margin-bottom: 15px;
+    width: 100%;
+    margin-bottom: 18px;
     border-radius: 12px;
     display: block;
 }
 
+/* ====================== CONTACT ====================== */
+.card-container .card {
+    text-align: center;
+}
+
+/* ====================== MEDIA QUERIES ====================== */
 @media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+    
+    .section {
+        padding: 60px 20px;
+    }
+    
+    .sponsor-track {
+        animation-duration: 16s;
+        gap: 40px;
+    }
+    
+    .sponsor-track img {
+        height: 70px;
+    }
+    
     .gallery {
         columns: 2;
     }
@@ -246,20 +244,12 @@ h1, h2, h3, p {
     .gallery {
         columns: 1;
     }
-}
-.sponsor-track img {
-    height: 90px;
-    width: auto;
-    object-fit: contain;
-    flex-shrink: 0;
-}
-
-
-.sponsor-group {
-  display: flex;
-  gap: 80px;
-  align-items: center;
-  flex-shrink: 0;
-  animation: scroll 18s linear infinite;
-  width: max-content;
+    
+    .nav-links {
+        gap: 10px;
+    }
+    
+    .nav-links a {
+        font-size: 0.85rem;
+    }
 }
