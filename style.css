@@ -156,19 +156,21 @@ body {
 }
 
 /* ====================== SPONSOR SLIDER (OPTIMIZE EDİLMİŞ) ====================== */
+/* ====================== SPONSOR SLIDER (YENİ - LAG AZALTILMIŞ) ====================== */
 .sponsor-slider {
     overflow: hidden;
     width: 100%;
-    margin: 40px 0;
+    margin: 40px 0 20px;
     padding: 20px 0;
+    background: rgba(17, 24, 39, 0.6);
+    border-radius: 12px;
 }
 
 .sponsor-track {
     display: flex;
-    gap: 70px;
+    gap: 80px;
     width: max-content;
-    animation: scroll 22s linear infinite;
-    will-change: transform;
+    animation: scrollLeft 28s linear infinite;
 }
 
 .sponsor-track img {
@@ -176,26 +178,39 @@ body {
     width: auto;
     object-fit: contain;
     flex-shrink: 0;
-    filter: brightness(0.9);
-    transition: all 0.3s ease;
+    filter: brightness(0.92);
+    transition: all 0.4s ease;
 }
 
 .sponsor-track img:hover {
-    filter: brightness(1.1);
-    transform: scale(1.08);
+    filter: brightness(1.15);
+    transform: scale(1.1);
 }
 
-/* Sonsuz döngü için */
-.sponsor-track::after {
-    content: attr(data-clone);
-    display: flex;
-    gap: 70px;
-    margin-left: 70px;
+/* Sonsuz döngü için duplicate */
+.sponsor-track.duplicate {
+    animation: scrollLeft 28s linear infinite;
 }
 
-@keyframes scroll {
-    from { transform: translateX(0); }
-    to   { transform: translateX(-50%); }
+/* Animasyon */
+@keyframes scrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Mobil */
+@media (max-width: 768px) {
+    .sponsor-track {
+        gap: 50px;
+        animation-duration: 20s;
+    }
+    .sponsor-track img {
+        height: 70px;
+    }
 }
 
 /* ====================== GALLERY ====================== */
