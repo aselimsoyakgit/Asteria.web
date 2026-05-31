@@ -253,3 +253,13 @@ h1, h2, h3, p {
     object-fit: contain;
     flex-shrink: 0;
 }
+
+
+.sponsor-group {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+  flex-shrink: 0;
+  animation: scroll 18s linear infinite;
+  width: max-content;
+}
