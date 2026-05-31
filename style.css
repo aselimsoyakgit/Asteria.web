@@ -170,7 +170,7 @@ body {
     display: flex;
     gap: 80px;
     width: max-content;
-    animation: scrollLeft 28s linear infinite;
+    animation: scrollLeft 14s linear infinite;
 }
 
 .sponsor-track img {
@@ -189,7 +189,7 @@ body {
 
 /* Sonsuz döngü için duplicate */
 .sponsor-track.duplicate {
-    animation: scrollLeft 28s linear infinite;
+    animation: scrollLeft 14s linear infinite;
 }
 
 /* Animasyon */
