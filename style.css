@@ -186,8 +186,19 @@ h1, h2, h3, p {
 
 .sponsor-track {
     display: flex;
+    gap: 80px;
     width: max-content;
-    animation: scrollSponsors 20s linear infinite;
+    animation: scroll 25s linear infinite;
+    will-change: transform;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .sponsor-track img {
@@ -202,15 +213,7 @@ h1, h2, h3, p {
     transform: scale(1.1);
 }
 
-@keyframes scrollSponsors {
-    from {
-        transform: translateX(0);
-    }
 
-    to {
-        transform: translateX(-50%);
-    }
-}
 
 @media (max-width: 768px) {
 
