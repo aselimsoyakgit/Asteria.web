@@ -156,63 +156,62 @@ body {
 }
 
 /* ====================== SPONSOR SLIDER (OPTIMIZE EDİLMİŞ) ====================== */
-/* ====================== SPONSOR SLIDER (YENİ - LAG AZALTILMIŞ) ====================== */
+/* ====================== SPONSOR SLIDER - EN STABİL VERSİYON ====================== */
 .sponsor-slider {
     overflow: hidden;
     width: 100%;
-    margin: 40px 0 20px;
+    margin: 40px 0;
     padding: 20px 0;
-    background: rgba(17, 24, 39, 0.6);
-    border-radius: 12px;
+    background: rgba(17, 24, 39, 0.5);
+    border-radius: 16px;
 }
 
 .sponsor-track {
     display: flex;
     gap: 80px;
     width: max-content;
-    animation: scrollLeft 14s linear infinite;
+    animation: scrollLeft 30s linear infinite;
+    /* Performansı artıran özellikler */
+    will-change: transform;
+    transform: translate3d(0, 0, 0); /* GPU hızlandırma */
 }
 
 .sponsor-track img {
-    height: 95px;
+    height: 90px;
     width: auto;
     object-fit: contain;
     flex-shrink: 0;
-    filter: brightness(0.92);
-    transition: all 0.4s ease;
+    filter: brightness(0.95);
+    transition: transform 0.4s ease;
 }
 
 .sponsor-track img:hover {
-    filter: brightness(1.15);
     transform: scale(1.1);
 }
 
-/* Sonsuz döngü için duplicate */
-.sponsor-track.duplicate {
-    animation: scrollLeft 14s linear infinite;
+/* Sonsuz döngü için kopyalama */
+.sponsor-track::after {
+    content: attr(data-clone);
+    display: flex;
+    gap: 80px;
+    margin-left: 80px;
 }
 
-/* Animasyon */
 @keyframes scrollLeft {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
 }
 
-/* Mobil */
+/* Mobil için daha yavaş ve hafif */
 @media (max-width: 768px) {
     .sponsor-track {
+        animation-duration: 22s;
         gap: 50px;
-        animation-duration: 20s;
     }
     .sponsor-track img {
         height: 70px;
     }
 }
-
 /* ====================== GALLERY ====================== */
 .gallery {
     columns: 3;
